@@ -1,21 +1,21 @@
 ---
-name: resume
+name: resume-from
 description:
   Resume or continue work from a recent Claude Code, Codex, or Grok session. Use when the
   user switched from Claude, Codex, or Grok, says "continue from Claude/Codex/Grok" or
-  "resume my Claude/Codex/Grok session", runs /resume, or names a session by description,
-  path, or native ID.
+  "resume my Claude/Codex/Grok session", runs /resume-from, or names a session by
+  description, path, or native ID.
 argument-hint: "<claude|codex|grok> [session id or description]"
 ---
 
-# Resume a foreign coding-agent session
+# Resume work from a foreign coding-agent session
 
 This folder is the whole skill (`SKILL.md` + `scripts/`). It runs from any
-host and any project: `~/.agents/skills/resume`, `{repo}/.agents/skills/resume`,
+host and any project: `~/.agents/skills/resume-from`, `{repo}/.agents/skills/resume-from`,
 or another skills root. It does not depend on the docs-skills repo.
 
 The argument string is `$ARGUMENTS` when the host expands it, otherwise the
-text after `/resume`. It is `<agent> [session reference]`.
+text after `/resume-from`. It is `<agent> [session reference]`.
 
 ## Parse arguments
 
@@ -27,10 +27,10 @@ text after `/resume`. It is `<agent> [session reference]`.
 3. If the agent is missing or unknown, show this usage and stop:
 
 ```text
-/resume claude
-/resume claude "port to tanstack with nextjs structure"
-/resume codex latest
-/resume grok 01a13077-2106-7fd3-896c-7a3793fd477d
+/resume-from claude
+/resume-from claude "port to tanstack with nextjs structure"
+/resume-from codex latest
+/resume-from grok 01a13077-2106-7fd3-896c-7a3793fd477d
 ```
 
 This step is done when `TOOL` is `claude`, `codex`, or `grok`, and `REF` is the session
@@ -65,11 +65,11 @@ Set the skill root in this order. Stop at the first directory that contains
 
 1. The directory of this `SKILL.md` (skill-load metadata, or `SKILL_DIR` when
    the host sets it).
-2. `$PWD/.agents/skills/resume`
-3. `{git toplevel}/.agents/skills/resume`
-4. `~/.agents/skills/resume`
-5. `~/.config/opencode/skills/resume`
-6. `~/.claude/skills/resume`
+2. `$PWD/.agents/skills/resume-from`
+3. `{git toplevel}/.agents/skills/resume-from`
+4. `~/.agents/skills/resume-from`
+5. `~/.config/opencode/skills/resume-from`
+6. `~/.claude/skills/resume-from`
 
 Confirm `READER` exists as a file. Stay in the user's project directory. Pass
 that project as `--cwd` (absolute `$PWD`).
