@@ -6,7 +6,6 @@ This is my skills repo. Each skill lives in `skills/<name>/SKILL.md`.
 
 | Skill | Invocation | Summary |
 | --- | --- | --- |
-| [`btw`](skills/btw/SKILL.md) | Manual | Answer a side question briefly in ELI5 style without changing files or the active task. |
 | [`code-reviewer`](skills/code-reviewer/SKILL.md) | Automatic | Review a small set of local changes for bugs, project-rule violations, and scope creep. It requires deep reading, two analysis passes, reproduction scenarios, and reports only findings with confidence of at least 80. |
 | [`doc-writer`](skills/doc-writer/SKILL.md) | Automatic | Write useful code comments, numbered Markdown docs for features and refactors, and PRDs after requirements are clear. It includes the repository's comment guidance and requires ASD-STE100 Simplified Technical English. |
 | [`resume-from`](skills/resume-from/SKILL.md) | Automatic | Resume work from a recent Claude Code, Codex, or Grok session. Invoke as `/resume-from claude|codex|grok [session id or description]`. |
