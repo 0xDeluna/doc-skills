@@ -31,6 +31,6 @@ For each finding:
 ### Short title
 **Components**: the parts involved
 **Finding**: the issue, naming the components, boundary, or coupling
-**Evidence**: code references that show it, such as the dependency chain
+**Evidence**: the code that shows it, as a snippet or a dependency chain
 **Impact**: what it costs in practice
 ```

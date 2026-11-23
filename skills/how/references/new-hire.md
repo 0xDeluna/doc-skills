@@ -13,10 +13,12 @@ The reader is an engineer who just joined the company. They know general softwar
 
 ## Structure
 
-Each answer starts with **Overview** (1–2 paragraphs), **Code map** (as in Explain step 3), and **Glossary**. Each glossary entry is the term and a definition of one or two sentences. Then:
+Each answer starts with **Overview** (1–2 paragraphs) and **Glossary**. Each glossary entry is the term and a definition of one or two sentences. Then:
 
 - **Codebase or area**: How it works, Gotchas, and Open questions, as in Explain step 3.
 - **Issue**: the problem or request, how the affected code works now, where the fix probably goes, and open questions.
-- **PR**: why the change is necessary, the background the reader needs, the changes in order of the flow (not file order), and the risks a reviewer must check.
+- **PR**: why the change is necessary, the background the reader needs, the changes in order of the flow (not file order), and the risks a reviewer must check. Show each key change as a `diff` snippet.
+
+Show snippets as in Explain step 3.
 
 If the user also asks for Critique, put the verdict last.

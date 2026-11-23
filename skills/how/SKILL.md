@@ -16,19 +16,32 @@ Modes:
 
 ## Writing
 
-Write all prose in every mode in ASD-STE100 Simplified Technical English. This includes follow-up answers in the same conversation.
+Write all answer prose in strict ASD-STE100 Simplified Technical English (STE): every mode, every section, every follow-up answer in the conversation. Code, snippets, and quoted text keep their original form.
 
-- Write one topic in each sentence. Use a maximum of 20 words in an instruction and 25 words in a description.
-- Use the active voice and simple tenses.
-- Use one word for one meaning. Use the same word for the same thing each time.
-- Use a maximum of three nouns in a noun cluster.
-- Use a maximum of six sentences in a paragraph.
-- Keep articles ("a", "the").
-- Keep code identifiers, file paths, and repository terms in their exact form. Repository terms take precedence over the STE dictionary.
+Words:
+
+- Use STE-approved words in their approved meaning and part of speech. Technical names (code identifiers, file paths, product and repository terms) and technical verbs are allowed. Repository terms take precedence over the STE dictionary.
+- Use one word for one meaning, and the same word for the same thing each time.
+- Use the active voice and only the simple present, simple past, and simple future tenses.
+- Use an "-ing" form only inside a technical name. Write no contractions.
+- Keep articles ("a", "the"). Use a maximum of three nouns in a noun cluster.
+
+Sentences:
+
+- Write one topic in each sentence, and one instruction in each instruction.
+- Use a maximum of 20 words in an instruction and 25 words in a description.
+- Write instructions in the imperative. Put a condition before its instruction: "If the balance is low, reject the request."
+- Write one topic in each paragraph, with a maximum of six sentences.
+- Use a vertical list for a sequence of steps.
+
+Content:
+
 - Name the actors: "`ComposerService` calls `StreamHandler.begin()`", not "the service delegates to the handler".
-- Put every link in the Code map (Explain step 3). Everywhere else, name symbols in backticks, with no link and no path.
-- Explain why complex parts are complex; keep simple parts short.
+- Explain why a complex part is complex. Keep a simple part short.
 - State open questions plainly.
+- Give file locations only in snippet comments (Explain step 3). Add no Markdown links.
+
+Before you send an answer, check each sentence against these rules and rewrite each sentence that fails. Done when no sentence fails.
 
 ## Explain
 
@@ -55,11 +68,16 @@ Done when every angle traces from trigger to effect with no hand-waved step. Rec
 Adapt this structure to the question; drop sections that add nothing.
 
 - **Overview**: 1–2 paragraphs on what it is, what it does, and why it exists. Enough for the reader to decide whether to read on.
-- **Code map**: a table with one row for each symbol, file, and directory the answer names, in order of first mention. Columns: the name, and a link to its absolute path. The link text is the file name, plus the definition line for a symbol: [stream-handler.ts:42](/abs/path/src/stream-handler.ts:42). Take the line number from the file you read.
 - **Key concepts**: the types, services, and abstractions needed to follow the rest, briefly.
-- **How it works**: the longest section. The trigger, each step, where data goes, the decision points. Write prose, not pseudocode; name the functions; quote code only when a snippet is essential. Add a diagram when several components interact or data moves through stages: mermaid for sequences, flowcharts, and component graphs; ASCII for simple relationships.
+- **How it works**: the longest section. The trigger, each step, where data goes, the decision points. Add a diagram when several components interact or data moves through stages: mermaid for sequences, flowcharts, and component graphs; ASCII for simple relationships.
 - **Gotchas**: sharp edges, surprising behavior, and history that explains odd code.
 - **Open questions**: each connection you could not trace in step 2.
+
+Snippets: under the prose for each key step, show a **snippet** so the reader sees the code at a glance.
+
+- Show real code when it is short and clear. Show pseudocode when the real code is long or noisy.
+- Keep a snippet to 10 lines or fewer. Replace cut lines with `// ...`.
+- Start the snippet with a comment that holds the repository-relative path, plus `(pseudocode)` for pseudocode: `// src/workers/retry.ts (pseudocode)`.
 
 ## Critique
 
